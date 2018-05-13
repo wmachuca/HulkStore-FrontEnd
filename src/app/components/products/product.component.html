@@ -1,0 +1,66 @@
+<h2>
+  Producto
+  <div class="float-right">
+    <button [routerLink]="['/products']"
+      type="submit"
+      class="btn btn-primary">
+      Regresar
+    </button>
+    <button (click)="newProduct()"
+      type="submit"
+      class="btn btn-primary">
+      Nuevo Producto
+    </button>
+  </div>
+</h2>
+<hr>
+<div class="row">
+  <div class="col-6">
+    <form (ngSubmit)="save()" #formProduct="ngForm">
+      <div class="form-group">
+        <label for="">Nombre</label>
+        <input [(ngModel)]="product.name"
+          name="name"
+          type="text"
+          class="form-control"
+          placeholder="Nombre del Producto"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="">Marca</label>
+        <select [(ngModel)]="product.brand"
+          name="brand"
+          class="form-control">
+          <option value="">Seleccione</option>
+          <option value="Marvel">Marvel</option>
+          <option value="DC">DC</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+      <div *ngIf="product.brand==='Otro'"
+        class="form-group" >
+        <label for="">¿Cual Marca?</label>
+        <input [(ngModel)]="brandAlt"
+          name="brand"
+          type="text"
+          class="form-control"
+          placeholder="Nombre de la Marca"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="">Cantidad</label>
+        <input [(ngModel)]="product.quantity"
+          name="quantity"
+          type="number"
+          class="form-control"
+          placeholder="Cantidad Incial"
+          required>
+      </div>
+      <button [disabled]='!formProduct.valid'
+        type="submit"
+        class="btn btn-primary float-right">
+        Guardar Producto
+      </button>
+    </form>
+  </div>
+</div>
