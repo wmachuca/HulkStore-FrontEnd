@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Important
 
-Update the ServiceURL located in "src/app/services/products.service.ts" before serve or build, this depends on your HulkStore-BackEnd configuration.
-By default we have "http://localhost:8084/HulkStore/services/products".
+Update the ServiceURL located in `src/app/services/products.service.ts` before serve or build, this depends on your HulkStore-BackEnd configuration.
+By default we have `http://localhost:8084/HulkStore/services/products`.
 
 ## Development server
 
